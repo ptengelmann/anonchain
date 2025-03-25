@@ -1,50 +1,49 @@
 /* client/src/components/DataForm.module.css */
 .formContainer {
-    background-color: var(--background-color);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  .formTitle {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #ffffff;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .submitButton {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submitButton:hover {
-    opacity: 0.9;
-  }
-  
-  .message {
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.formTitle {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submitButton {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+.message {
+  color: #ffffff;
+  margin-bottom: 10px;
+}

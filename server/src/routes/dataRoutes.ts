@@ -8,7 +8,7 @@ router.get('/', async (req: Request, res: Response) => {
   try {
     const dataSets = await DataSet.find();
     res.json(dataSets);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: 'Server Error' });
   }
 });
@@ -20,7 +20,7 @@ router.post('/', async (req: Request, res: Response) => {
     const newDataSet = new DataSet({ title, description, dataUrl });
     const savedDataSet = await newDataSet.save();
     res.status(201).json(savedDataSet);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: 'Server Error' });
   }
 });

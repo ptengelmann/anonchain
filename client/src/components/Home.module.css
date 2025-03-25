@@ -1,18 +1,17 @@
 /* client/src/components/Home.module.css */
 
 .container {
-    background-color: var(--background-color);
-    padding: 20px;
-  }
-  
-  .title {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .subtitle {
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ffffff;
+  margin-bottom: 20px;
+}

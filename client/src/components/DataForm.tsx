@@ -11,11 +11,7 @@ const DataForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/data', {
-        title,
-        description,
-        dataUrl
-      });
+      await axios.post('/api/data', { title, description, dataUrl });
       setMessage('Dataset created successfully!');
       setTitle('');
       setDescription('');
@@ -60,7 +56,9 @@ const DataForm: React.FC = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.submitButton}>Submit</button>
+        <button type="submit" className={styles.submitButton}>
+          Submit
+        </button>
       </form>
     </div>
   );
