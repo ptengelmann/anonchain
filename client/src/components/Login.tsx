@@ -1,6 +1,7 @@
 // client/src/components/Login.tsx
 import React, { useState, FormEvent } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import styles from './Login.module.css';
 
 const Login: React.FC = () => {
@@ -8,13 +9,22 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [token, setToken] = useState('');
+  const navigate = useNavigate(); // Initialize navigation
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/auth/login', { email, password });
-      setToken(response.data.token);
+      const receivedToken = response.data.token;
+      setToken(receivedToken);
       setMessage('Login successful!');
+      
+      // Store token in localStorage
+      localStorage.setItem('token', receivedToken);
+      
+      // Redirect to a protected route (Dashboard)
+      navigate('/dashboard');
+      
       setEmail('');
       setPassword('');
     } catch (error: any) {
