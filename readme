@@ -1,0 +1,144 @@
+# AnonChain Project
+
+AnonChain is a data marketplace platform featuring a modern React frontend and an Express/TypeScript backend with JWT authentication. This project follows best practices including automated testing and CI/CD.
+
+---
+
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Client Setup](#client-setup)
+  - [Server Setup](#server-setup)
+- [Running the Application](#running-the-application)
+  - [Client](#client)
+  - [Server](#server)
+- [Automated Testing](#automated-testing)
+- [Continuous Integration (CI)](#continuous-integration-ci)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
+- [Future Enhancements](#future-enhancements)
+- [Git Commands](#git-commands)
+
+---
+
+## Project Structure
+
+AnonChain/ ├── client/ # React frontend (created with Create React App) │ ├── public/ │ ├── src/ │ │ ├── components/ │ │ │ ├── Home.tsx │ │ │ ├── DataForm.tsx │ │ │ ├── Register.tsx │ │ │ ├── Login.tsx │ │ │ ├── ProtectedRoute.tsx │ │ │ └── Dashboard.tsx │ │ ├── styles/ │ │ │ └── colors.css │ │ └── App.tsx │ ├── package.json │ └── tsconfig.json ├── server/ # Express/TypeScript backend │ ├── src/ │ │ ├── app.ts # Express app with routes (data and auth) │ │ ├── index.ts # Entry point that starts the server │ │ ├── config/ │ │ │ └── db.ts # MongoDB connection setup │ │ ├── models/ │ │ │ ├── DataSet.ts │ │ │ └── User.ts │ │ ├── routes/ │ │ │ ├── dataRoutes.ts │ │ │ └── authRoutes.ts │ │ └── tests/ │ │ ├── authRoutes.test.ts │ │ └── dataRoutes.test.ts │ ├── package.json │ ├── tsconfig.json │ └── jest.config.js └── .github/ └── workflows/ └── ci.yml # GitHub Actions CI workflow configuration
+
+yaml
+Copy
+
+---
+
+## Getting Started
+
+### Client Setup
+
+1. **Navigate to the client folder:**
+   ```bash
+   cd client
+Install dependencies:
+
+bash
+Copy
+npm install
+Server Setup
+Navigate to the server folder:
+
+bash
+Copy
+cd server
+Install dependencies:
+
+bash
+Copy
+npm install
+Set Up Environment Variables:
+
+Create a .env file in the server folder with the following variables:
+
+ini
+Copy
+PORT=5000
+MONGO_URI=<your MongoDB connection string>
+JWT_SECRET=<your secret key>
+Running the Application
+Client
+Start the Development Server:
+
+bash
+Copy
+npm start
+The client runs on http://localhost:3000.
+
+A proxy is configured in package.json to forward API requests to the backend on port 5000.
+
+Server
+Start in Development Mode:
+
+bash
+Copy
+npm run dev
+For Production:
+
+Build the server:
+
+bash
+Copy
+npm run build
+Start the server:
+
+bash
+Copy
+npm start
+The server listens on the port defined in your .env file (default is 5000).
+
+Automated Testing
+Backend tests are set up using Jest and Supertest.
+
+To run tests in the server folder:
+
+bash
+Copy
+npm run test
+Tests are located in server/src/tests and cover authentication and data routes.
+
+Ensure MongoDB is accessible during testing, and note that tests include cleanup to close connections.
+
+Continuous Integration (CI)
+A GitHub Actions workflow is configured to run linting and tests automatically.
+
+Workflow Location:
+.github/workflows/ci.yml
+
+Trigger:
+On pushes and pull requests to main or feature branches.
+
+Environment Variables
+The server requires the following environment variables (set in the .env file):
+
+PORT: Port for the server (e.g., 5000)
+
+MONGO_URI: MongoDB connection string
+
+JWT_SECRET: Secret key for signing JWT tokens
+
+Deployment
+Consider the following for deployment:
+
+Docker: Create Dockerfiles for both client and server.
+
+Staging & Production Environments: Automate deployment via CI/CD pipelines.
+
+Environment Management: Securely manage your environment variables and secrets.
+
+Future Enhancements
+Client-side Testing: Add tests for React components using Jest and React Testing Library.
+
+Advanced Authentication: Implement auto-logout, token refresh, and a global auth context.
+
+API Documentation: Use Swagger to document backend endpoints.
+
+Performance Improvements: Code-splitting and lazy loading on the client; caching strategies on the server.
+
