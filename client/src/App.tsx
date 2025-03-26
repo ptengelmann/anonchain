@@ -1,9 +1,12 @@
+// client/src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import DataForm from './components/DataForm';
 import Register from './components/Register';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +26,9 @@ const App: React.FC = () => {
             <li>
               <Link to="/login" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>Login</Link>
             </li>
+            <li>
+              <Link to="/dashboard" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>Dashboard</Link>
+            </li>
           </ul>
         </nav>
       </header>
@@ -32,6 +38,14 @@ const App: React.FC = () => {
           <Route path="/data" element={<DataForm />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route 
+            path="/dashboard" 
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
       </main>
     </Router>
