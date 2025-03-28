@@ -1,9 +1,7 @@
-// client/src/components/Home.tsx
 import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import styles from './Home.module.css';
 
-// Define a type for your data
 type DataSet = {
   _id: string;
   title: string;
