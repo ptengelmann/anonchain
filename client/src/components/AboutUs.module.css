@@ -1,0 +1,10 @@
+/* client/src/components/AboutUs.module.css */
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 8px;
+  }
+  

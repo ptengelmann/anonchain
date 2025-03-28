@@ -1,0 +1,10 @@
+/* client/src/components/Marketplace.module.css */
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 8px;
+  }
+  

@@ -2,20 +2,17 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
+// Change React.ReactElement to React.ReactNode
 interface ProtectedRouteProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  // Optionally, you can use context here instead of localStorage if preferred:
-  // const { token } = useContext(AuthContext);
   const token = localStorage.getItem('token');
-
   if (!token) {
     return <Navigate to="/login" replace />;
   }
-
-  return children;
+  return <>{children}</>; // Wrap children in a fragment (optional)
 };
 
 export default ProtectedRoute;
