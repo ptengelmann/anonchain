@@ -1,10 +1,69 @@
 /* client/src/components/Dashboard.module.css */
+:root {
+  --primary-color: #00af5b;
+  --secondary-color: #032130;
+  --background-color: #1a1a1a;
+  --card-background: #2c2c2c;
+  --text-color: #ffffff;
+  --border-radius: 8px;
+  --spacing: 16px;
+}
+
 .dashboardContainer {
-    padding: 20px;
-    background-color: var(--background-color);
-    color: white;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
+  padding: var(--spacing);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.dashboardHeader {
+  font-size: 2rem;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+.dashboardIntro {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+.cardGrid {
+  display: flex;
+  gap: var(--spacing);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dataCard {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing) * 1.5);
+  flex: 1 1 300px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.dataCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.cardValue {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #cccccc;
+}
